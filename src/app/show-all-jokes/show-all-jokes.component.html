@@ -1,0 +1,17 @@
+<div class="show-all__container">
+    <table class="table">
+        <tr>
+          <th class="th">Question</th>
+          <th class="th">Answer</th>
+          <th class="th">Rate joke</th>
+          <th class="th"></th>
+        </tr>      
+          <tr  *ngFor="let joke of this.jokeRepository.jokes">
+            <td class="td show-all__container--cell">{{joke.jokeQuestion}}</td>
+            <td class="td show-all__container--cell">{{joke.jokeAnswer}}</td>
+            <td><ngx-star-rating class="show-all__container--rating" [rating]="joke.rating" [size]="37" (rated)="this.rate($event, joke)" [filledColor]="'#6b32a8'" [emptyColor]="'#6b32a8'"></ngx-star-rating>
+            </td>
+            <td> <mat-icon (click)="this.onDeleteJoke(joke)" class="show-all__container--icon">delete_outline</mat-icon> </td>        
+          </tr>
+    </table>
+</div>

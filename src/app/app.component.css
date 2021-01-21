@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__label {
+  margin-top: 5%;
+  font-size: 90px;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+}
+
+.btn {
+  margin-top: 5%;
+  margin-left: 42%;
+  margin-bottom: 5%;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect01 {
+  color: #fff;
+  border: 4px solid #000;
+  box-shadow: 0px 0px 0px 1px #000 inset;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.effect01:hover {
+  border: 4px solid #666;
+  background-color: #fff;
+  box-shadow: 0px 0px 0px 4px #eee inset;
+}
+
+/*btn_text*/
+.effect01 span {
+  transition: all 0.2s ease-out;
+  z-index: 2;
+  font-size: 17px;
+}
+.effect01:hover span {
+  letter-spacing: 0.13em;
+  color: #333;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+/*highlight*/
+.effect01:after {
+  background: #fff;
+  border: 0px solid #000;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.8;
+  position: absolute;
+  top: -50px;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+  width: 50px;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
+  z-index: 1;
+}
+.effect01:hover:after {
+  background: #fff;
+  border: 20px solid #000;
+  opacity: 0;
+  left: 120%;
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+
+.container__joke {
+  margin-top: 4%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.container__joke--answer {
+  margin-top: 20px;
+  transition-delay: 2s;
+  transition-delay: initial;
+}
+@keyframes delayedShow {
+  to {
+    visibility: visible;
+  }
+}
+
+.container__show-all {
+  position: absolute;
+  bottom: 80px;
+  min-width: 99%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.delayedShow {
+  visibility: hidden;
+  animation: 0s linear 2s forwards delayedShow;
+}

@@ -1,0 +1,46 @@
+.table {
+  min-width: 100%;
+  margin-top: 30px;
+  background-color: rgba(243, 243, 243, 0.781);
+  padding: 15px;
+}
+
+.show-all__container--cell {
+  width: 40%;
+}
+
+.show-all__container--rating {
+  width: 10%;
+  text-align: center;
+}
+
+.show-all__container--icon {
+  margin-left: 20%;
+  max-width: 10%;
+  font-size: 32px;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.th {
+  border: 1px solid white;
+  font-size: 25px;
+  padding: 15px;
+  font-weight: 500;
+  background-color: rgb(53, 5, 95);
+  color: white;
+  text-align: center;
+}
+
+.td {
+  font-size: 22px;
+  text-align: center;
+  padding: 15px;
+}
+
+.show-all__container {
+  min-height: 735px;
+  max-height: 735px;
+  overflow: hidden;
+}
