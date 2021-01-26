@@ -6,7 +6,7 @@
 }
 
 .show-all__container--cell {
-  width: 40%;
+  width: 35%;
 }
 
 .show-all__container--rating {
@@ -43,4 +43,11 @@
   min-height: 735px;
   max-height: 735px;
   overflow: hidden;
+}
+
+::ng-deep .mat-menu-content {
+  padding: 8% 20% !important;
+  font-size: larger;
+  width: 100%;
+  white-space: pre-line;
 }

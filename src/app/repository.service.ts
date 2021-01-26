@@ -15,21 +15,18 @@ export class Repository {
     (x) => x.jokes.filter((j) => j != x.data)
   );
 
-  public replace(
-    supplier: Function,
+  public replaceJoke(
+    jokes: Joke[],
     data: { newJoke: Joke; index: number }
   ): Joke[] {
     return [
-      ...supplier().slice(0, data.index),
+      ...jokes.slice(0, data.index),
       data.newJoke,
-      ...supplier().slice(data.index + 1, supplier().length),
+      ...jokes.slice(data.index + 1, jokes.length),
     ];
   }
 
-  public findIndex(supplier: Function, joke: Joke): number {
-    return supplier().findIndex((j) => j === joke);
+  public findJokeIndex(jokes: Joke[], joke: Joke): number {
+    return jokes.findIndex((j) => j === joke);
   }
-
-  public replaceJoke = R.curry(this.replace)(() => this.jokes);
-  public findJokeIndex = R.curry(this.findIndex)(() => this.jokes);
 }

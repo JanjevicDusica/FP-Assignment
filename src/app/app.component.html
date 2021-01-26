@@ -12,7 +12,7 @@
     <div class="container__joke--answer delayedShow" >
       {{this.joke.jokeAnswer}}
     </div>
-    <app-heart-button (likeChanged)="this.onLikeJoke($event)"></app-heart-button>
+    <app-heart-button (class)="container__joke--heart" (likeChanged)="this.onLikeJoke($event)"></app-heart-button>
   </div>
 </div>
 

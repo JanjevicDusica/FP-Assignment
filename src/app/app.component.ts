@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Service } from './joke.service';
+import { JokeService } from './joke.service';
 import * as R from 'ramda';
 import { Repository } from './repository.service';
 
@@ -27,15 +27,23 @@ export class AppComponent {
   public joke: Joke;
 
   constructor(
-    private readonly service: Service,
+    private readonly service: JokeService,
     private readonly jokeRepository: Repository
-  ) {}
+  ) {
+    let arr2 = [1, 2, 4, 5, 6].map((x) => x + 1);
+    console.log(arr2);
+    let arr1 = R.map((x) => [x, x + 1], [1, 2, 4, 5, 6]);
+    console.log(arr1);
+
+    const duplicate = (n) => [n, n];
+    console.log(R.chain(duplicate, [1, 2, 3]));
+  }
 
   public async onHearJoke(): Promise<void> {
     this.title = NEXT_JOKE_TITLE;
     const JOKE_API_URL = 'https://official-joke-api.appspot.com/jokes/random';
     this.showJoke = false;
-    this.joke = await this.service.getOneJoke(JOKE_API_URL);
+    this.joke = await this.service.fetch(JOKE_API_URL);
     this.showJoke = true;
   }
 
